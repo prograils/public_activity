@@ -50,20 +50,11 @@ when :active_record
       def self.name
         "Article"
       end
-
-      if ::ActiveRecord::VERSION::MAJOR < 4
-        attr_accessible :name, :published, :user
-      end
     end
     klass
   end
   class User < ActiveRecord::Base; end
 
-  if ::ActiveRecord::VERSION::MAJOR < 4
-    PublicActivity::Activity.class_eval do
-      attr_accessible :nonstandard
-    end
-  end
 when :mongoid
   require 'mongoid'
 

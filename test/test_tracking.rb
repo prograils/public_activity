@@ -42,9 +42,6 @@ describe PublicActivity::Tracked do
           tracked
           activist
 
-          if ::ActiveRecord::VERSION::MAJOR < 4
-            attr_accessible :name, :published, :user
-          end
           belongs_to :user
         end
     end
